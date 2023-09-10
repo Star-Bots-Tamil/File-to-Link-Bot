@@ -11,21 +11,21 @@ load_dotenv()
 
 class Var(object):
     MULTI_CLIENT = False
-    API_ID = int(environ.get("API_ID"))
-    API_HASH = str(environ.get("API_HASH"))
-    BOT_TOKEN = str(environ.get("BOT_TOKEN"))
+    API_ID = int(environ.get("API_ID", "11973721"))
+    API_HASH = str(environ.get("API_HASH", "5264bf4663e9159565603522f58d3c18"))
+    BOT_TOKEN = str(environ.get("BOT_TOKEN", "5865794282:AAHOft0vRjSDCR2N-nw6uuGvhj0KmgOb66c"))
     SESSION_NAME = str(getenv('SESSION_NAME', 'Star_Bots_Tamil'))    
     OWNER_ID = int(getenv("OWNER_ID", "1391556668"))
     API = str(getenv('API', 'd03a53149bf186ac74d58ff80d916f7a79ae5745'))
     SLEEP_THRESHOLD = int(environ.get("SLEEP_THRESHOLD", "60"))  # 1 minte
-    WORKERS = int(environ.get("WORKERS", "6"))  # 6 workers = 6 commands at once
+    WORKERS = int(environ.get("WORKERS", "7"))  # 7 workers = 7 commands at once
     BIN_CHANNEL = int(
-        environ.get("BIN_CHANNEL", None)
+        environ.get("BIN_CHANNEL", "-1001871766752")
     )  # you NEED to use a CHANNEL when you're using MULTI_CLIENT
     PORT = int(environ.get("PORT", 8080))
     BIND_ADDRESS = str(environ.get("WEB_SERVER_BIND_ADDRESS", "0.0.0.0"))
     PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
-    HAS_SSL = str(environ.get("HAS_SSL", "0").lower()) in ("1", "true", "t", "yes", "y")
+    HAS_SSL = str(environ.get("HAS_SSL", "1").lower()) in ("1", "true", "t", "yes", "y")
     NO_PORT = str(environ.get("NO_PORT", "0").lower()) in ("1", "true", "t", "yes", "y")
     HASH_LENGTH = int(environ.get("HASH_LENGTH", 7))
     if not 5 < HASH_LENGTH < 64:
@@ -33,7 +33,7 @@ class Var(object):
     APP_NAME = None
     if 'DYNO' in environ:
         ON_HEROKU = True
-        APP_NAME = str(getenv('APP_NAME', "file-to-link-star-bots"))
+        APP_NAME = str(getenv('APP_NAME', "filetolinkstarbot"))
     else:
         ON_HEROKU = False
     FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
