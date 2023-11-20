@@ -23,10 +23,10 @@ class Var(object):
         environ.get("BIN_CHANNEL", "-1001871766752")
     )  # you NEED to use a CHANNEL when you're using MULTI_CLIENT
     PORT = int(environ.get("PORT", 8080))
-    BIND_ADDRESS = str(environ.get("WEB_SERVER_BIND_ADDRESS", "0.0.0.0"))
+    BIND_ADDRESS = str(environ.get("WEB_SERVER_BIND_ADDRESS", "starstreamer.hop.sh"))
     PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
     HAS_SSL = str(environ.get("HAS_SSL", "1").lower()) in ("1", "true", "t", "yes", "y")
-    NO_PORT = str(environ.get("NO_PORT", "0").lower()) in ("1", "true", "t", "yes", "y")
+    NO_PORT = str(environ.get("NO_PORT", "1").lower()) in ("1", "true", "t", "yes", "y")
     HASH_LENGTH = int(environ.get("HASH_LENGTH", 7))
     if not 5 < HASH_LENGTH < 64:
         sys.exit("Hash length should be greater than 5 and less than 64")
