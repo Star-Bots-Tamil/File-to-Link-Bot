@@ -45,7 +45,7 @@ async def start_services():
     if Var.KEEP_ALIVE:
         asyncio.create_task(utils.ping_server())
     await server.setup()
-    await web.TCPSite(server, Var.BIND_ADDRESS, Var.PORT).start()
+    await web.TCPSite(server, '0.0.0.0', 8080).start()
     logging.info("Service Started")
     logging.info("bot =>> {}".format(bot_info.first_name))
     if bot_info.dc_id:
