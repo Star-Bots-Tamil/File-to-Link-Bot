@@ -13,7 +13,7 @@ class Var(object):
     MULTI_CLIENT = False
     API_ID = int(environ.get("API_ID", "11973721"))
     API_HASH = str(environ.get("API_HASH", "5264bf4663e9159565603522f58d3c18"))
-    BOT_TOKEN = str(environ.get("BOT_TOKEN", "5865794282:AAHOft0vRjSDCR2N-nw6uuGvhj0KmgOb66c"))
+    BOT_TOKEN = str(environ.get("BOT_TOKEN", "5777457260:AAEfAMULHIjj7P__22qSvoT9ygR-u2iANSE"))
     SESSION_NAME = str(getenv('SESSION_NAME', 'Star_Bots_Tamil'))    
     OWNER_ID = int(getenv("OWNER_ID", "1391556668"))
     API = str(getenv('API', 'd03a53149bf186ac74d58ff80d916f7a79ae5745'))
